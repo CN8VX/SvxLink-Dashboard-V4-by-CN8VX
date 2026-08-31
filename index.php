@@ -154,7 +154,7 @@ $rfActivity = $rfActive ? getReflectorActivity(50) : [];
   <div class="grid-bottom">
 
       <!-- ══ Reflector Activity ══ -->
-      <div class="panel" style="grid-row:span 2" id="reflector-panel">
+      <div class="panel" id="reflector-panel">
         <div class="panel-label panel-bar">
           <span class="activity-icon">📋</span>Activity from SVXReflector
         </div>
