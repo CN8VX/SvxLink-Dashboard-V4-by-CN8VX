@@ -1013,8 +1013,8 @@ canvas#specCanvas { width: 100%; height: 50px; display: block; }
 
 .rf-table-container {
     overflow-x: auto;
-    max-height: 640px;
     overflow-y: auto;
+    max-height: 84vh;
     scrollbar-color: #30363d transparent;
 }
 
@@ -1721,6 +1721,10 @@ canvas#specCanvas { width: 100%; height: 50px; display: block; }
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
+
+    .rf-table-container {
+    max-height: 45vh;
+    }
     
     .rf-table,
     .log-table {
@@ -1857,3 +1861,13 @@ canvas#specCanvas { width: 100%; height: 50px; display: block; }
         width: 60%;
     }
 }
+@media (min-width: 1200px) and (max-width: 1366px) and (max-height: 850px) {
+    .rf-table-container {
+        max-height: 96vh;
+    }
+}
+/*@media (max-width: 1280px) {
+    .rf-table-container {
+        max-height: 100vh;
+    }
+}*/
