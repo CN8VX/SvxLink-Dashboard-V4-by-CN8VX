@@ -91,10 +91,11 @@ define('TEMP_UNIT', 'C');
 //  FUSEAU HORAIRE / TIMEZONE
 // ============================================================
 
-// Fuseau horaire lu automatiquement depuis /etc/localtime (celui du
-// système). Rempli sur Africa/Casablanca si indisponible.
-// Timezone auto-detected from /etc/localtime (system timezone).
-// Falls back to Africa/Casablanca if unavailable.
+// Fuseau horaire lu automatiquement depuis /etc/localtime (celui du système).
+// Si indisponible, renseigner votre fuseau horaire (ex. Africa/Casablanca).
+//
+// Timezone automatically detected from /etc/localtime (system timezone).
+// If unavailable, enter your local timezone (e.g. Africa/Casablanca).
 if (file_exists('/etc/localtime') && is_link('/etc/localtime')) {
     $systemTimezoneLink = readlink('/etc/localtime');
     $systemTimezone     = $systemTimezoneLink !== false
