@@ -429,7 +429,8 @@ window.DASH_CONFIG = {
     refresh:       5,
     qrz_enabled:   true,
     qrz_url:       'https://www.qrz.com/db/',
-    default_theme: '<?php echo htmlspecialchars(DEFAULT_THEME); ?>'
+    default_theme: '<?php echo htmlspecialchars(DEFAULT_THEME); ?>',
+    timezone:      '<?php echo htmlspecialchars(TIMEZONE); ?>'
 };
 </script>
 <script src="scripts/main.js"></script>
