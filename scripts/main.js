@@ -28,20 +28,25 @@ var repeaterFastPollTimer  = null;
 var currentRepeaterStatus  = 'listening';
 var _lastCpuSnapshot = null;
 
-
-// ════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
 //  CLOCK — real-time, ticks every second
-// ════════════════════════════════════════════════════════
+// Fuseau horaire fourni par le serveur (config.php -> TIMEZONE),
+// injecté dans window.DASH_CONFIG.timezone par index.php.
+// ═══════════════════════════════════════════════════════════════
+
+var DASH_TIMEZONE = CFG.timezone || undefined;
 
 function startRealTimeClock() {
     function updateClock() {
         var now = new Date();
 
         var timeStr = now.toLocaleTimeString('fr-FR', {
+            timeZone: DASH_TIMEZONE,
             hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
         });
 
         var dateStr = now.toLocaleDateString('fr-FR', {
+            timeZone: DASH_TIMEZONE,
             weekday: 'short', day: '2-digit', month: 'short', year: 'numeric'
         });
         dateStr = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
@@ -58,6 +63,7 @@ function startRealTimeClock() {
 function startClock() {
     function tick() {
         var t = new Date().toLocaleTimeString('fr-FR', {
+            timeZone: DASH_TIMEZONE,
             hour: '2-digit', minute: '2-digit', hour12: false
         });
         var el = document.getElementById('header-clock');
